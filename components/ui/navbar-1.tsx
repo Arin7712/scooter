@@ -13,16 +13,17 @@ const Navbar1 = () => {
 
   return (
     <div className="flex justify-center w-full py-6 px-4 z-50">
-      <div className="flex items-center justify-between px-6 py-3 bg-gradient-to-b from-zinc-600 to-black rounded-full shadow-lg w-full max-w-3xl relative z-10">
+      <div className="flex items-center justify-between px-6 py-3 bg-gradient-to-b from-zinc-600 to-black rounded-full shadow-lg w-full md:max-w-[55%] relative z-10">
         <div className="flex items-center">
           <motion.div
-            className="w-8 h-8 mr-6"
+            className="w-8 h-8 mr-6 flex items-center gap-2"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             whileHover={{ rotate: 10 }}
             transition={{ duration: 0.3 }}
           >
-            <Image src='/logo.png' alt='Logo' width={50} height={50} />
+            <Image src='/logo.png' alt='Logo' width={40} height={40} />
+            <h1 className="text-2xl text-neutral-200 font-medium ">Scooter</h1>
           </motion.div>
         </div>
         

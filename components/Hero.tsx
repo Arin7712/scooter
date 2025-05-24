@@ -26,7 +26,7 @@ const Hero = () => {
       <Image 
         src="/herobg.png" 
         alt="Background" 
-        className="absolute inset-0 w-full h-full object-cover object-left-top z-0" 
+        className="absolute inset-0 w-full h-full object-cover object-left-top z-0 opacity-50" 
         width={1000}
         height={1000}
       />
@@ -42,7 +42,7 @@ const Hero = () => {
         )}
       />
 
-      <div className='flex flex-col pt-[4rem] items-center justify-center md:px-0 px-[2rem]'>
+      <div className='flex flex-col pt-[4rem] items-center justify-center md:px-0 px-[4rem]'>
   <div className='flex flex-col md:max-w-5xl items-center justify-center gap-6 text-center z-20'>
 
     <motion.div
@@ -61,7 +61,7 @@ const Hero = () => {
       viewport={{ once: true }}
       className={`lg:text-[5.5rem] text-6xl`}
     >
-      Sales hiring,<br />
+      Sales hiring<br />
       <span className={font.className}>Solved</span>
     </motion.h1>
 
@@ -72,7 +72,7 @@ const Hero = () => {
       viewport={{ once: true }}
       className='text-neutral-700 text-md max-w-xl'
     >
-      Scooter is a sales hiring engine that uses AI and behavioral science to help you find the right driver for your GTM race.
+      Scooter uses AI + behavioral science to help you hire better sales talent, faster.
     </motion.p>
 
     <motion.div
