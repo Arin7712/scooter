@@ -92,8 +92,6 @@ const Problem = () => {
             style={{
               ...positions[i],
               animation: `float${i} 4s ease-in-out ${i * 0.3}s infinite`,
-              '--move-x': `${moveX}px`,
-              '--move-y': `${moveY}px`,
               transform: `var(--animation-transform, none) translateX(var(--move-x)) translateY(var(--move-y))`,
             }}
             onAnimationIteration={(e) => {
