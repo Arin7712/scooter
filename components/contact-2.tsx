@@ -31,7 +31,7 @@ export const Contact2 = ({
   web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
 }: Contact2Props) => {
   return (
-    <section className="py-[6rem] md:px-0 px-[4rem] relative bg-neutral-100">
+    <section className="py-[6rem] md:px-0 px-6 relative bg-neutral-100">
 <DotPattern
   cy={1} // Less vertical spacing
   cr={1} // Same radius of dots
@@ -43,7 +43,7 @@ export const Contact2 = ({
   )}
 />
       <div className="container">
-        <div className="mx-auto flex max-w-screen-xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
+        <div className="md:mx-auto flex md:max-w-screen-xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
           <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
             <div className="text-center lg:text-left flex flex-col md:justify-start justify-center md:items-start items-center">
               <h1 className="mb-4 text-5xl  lg:mb-4 lg:text-6xl">
@@ -85,7 +85,7 @@ export const Contact2 = ({
               </ul>
             </div> */}
           </div>
-          <div className="mx-auto flex md:max-w-screen-md flex-col gap-6 rounded-lg border-[1px] p-10 z-50 bg-white shadow-2xl">
+          <div className="md:mx-auto flex md:max-w-screen-md flex-col gap-6 rounded-lg border-[1px] p-10 z-50 bg-white shadow-2xl">
             <div className="flex gap-4">
               <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="firstname">First Name</Label>
