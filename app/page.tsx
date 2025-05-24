@@ -1,3 +1,4 @@
+import { FaqSectionWithCategoriesDemo } from '@/components/FAQs'
 import Hero from '@/components/Hero'
 import Problem from '@/components/Problem'
 import Problem2 from '@/components/Problem2'
@@ -10,6 +11,7 @@ const page = () => {
       <Hero/>
       <Problem/>
       <Problem2/>
+      <FaqSectionWithCategoriesDemo/>
     </div>
   )
 }
