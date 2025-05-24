@@ -88,24 +88,22 @@ const Problem = () => {
         const moveY = mousePos.y * 5
 
         return (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: i * 0.3, duration: 0.8 }}
-            className="absolute p-3 sm:p-4 md:max-w-[20%] max-w-[40%] rounded-md bg-neutral-300 text-xs md:text-md font-medium text-zinc-800 z-0"
-            style={{
-              ...positions[i],
-              animation: `float${i} 4s ease-in-out ${i * 0.3}s infinite`,
-              transform: `var(--animation-transform, none) translateX(var(--move-x)) translateY(var(--move-y))`,
-            }}
-            onAnimationIteration={(e) => {
-              e.currentTarget.style.setProperty(
-                '--animation-transform',
-                window.getComputedStyle(e.currentTarget).transform
-              )
-            }}
-          >
+        <motion.div
+  key={i}
+  initial={{ opacity: 0 }}
+  animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+  transition={{ delay: i * 0.3, duration: 0.8 }}
+  className="absolute p-3 sm:p-4 md:max-w-[20%] max-w-[40%] rounded-md bg-neutral-300 text-xs md:text-md font-medium text-zinc-800 z-0"
+  style={
+    {
+      ...positions[i],
+      animation: `float${i} 4s ease-in-out ${i * 0.3}s infinite`,
+      transform: `var(--animation-transform, none) translateX(var(--move-x)) translateY(var(--move-y))`,
+      '--move-x': `${moveX}px`,
+      '--move-y': `${moveY}px`,
+    } as any // 👈 This fixes the type error
+  }
+>
             <p>{quote}</p>
           </motion.div>
         )
