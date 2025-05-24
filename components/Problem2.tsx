@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { DotPattern } from "./ui/dot-pattern";
 import { cn } from "@/lib/utils";
-import { BellRing, X } from "lucide-react";
+import { BellRing, Sparkles, X } from "lucide-react";
 import { TextAnimate } from "./magicui/text-animate";
 import { Dancing_Script } from "next/font/google";
 

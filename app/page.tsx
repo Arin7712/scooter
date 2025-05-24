@@ -4,6 +4,8 @@ import { Demo } from '@/components/FooterDemo'
 import Hero from '@/components/Hero'
 import Problem from '@/components/Problem'
 import Problem2 from '@/components/Problem2'
+import Solution from '@/components/Solution'
+import { StickyScrollRevealDemo } from '@/components/StickyScrollRevealDemo'
 import TextTiltCard from '@/components/TiltCard'
 import React from 'react'
 
@@ -13,6 +15,8 @@ const page = () => {
       <Hero/>
       <Problem/>
       <Problem2/>
+      {/* <Solution/> */}
+      <StickyScrollRevealDemo/>
       <FaqSectionWithCategoriesDemo/>
           <Contact2 
       title="Let's talk sales hiring"
@@ -22,6 +26,7 @@ const page = () => {
       web={{ label: "shadcnblocks.com", url: "https://shadcnblocks.com" }}
     />
     <Demo/>
+    
     </div>
   )
 }
