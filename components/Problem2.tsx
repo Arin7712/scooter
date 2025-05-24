@@ -52,7 +52,7 @@ const Problem2 = () => {
       `}</style>
 
 
-      <div className="relative py-[6rem] md:gap-0 gap-[4rem] flex md:flex-row flex-col items-center justify-between md:h-screen overflow-hidden bg-black px-[4rem] md:px-[6rem]">
+      <div className="relative py-[6rem] md:gap-0 gap-[4rem] flex md:flex-row flex-col items-center justify-between md:h-screen overflow-hidden bg-black px-6 md:px-[6rem]">
         <DotPattern
           cy={1}
           cr={1}
