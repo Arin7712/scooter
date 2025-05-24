@@ -120,7 +120,7 @@ const Problem2 = () => {
           <motion.div
             variants={fadeInVariant}
             custom={3}
-            className="flex gap-2 items-center text-sm bg-white px-4 py-2 rounded-md w-fit text-black font-medium"
+            className="flex gap-2 items-center text-sm bg-white z-50 px-4 py-2 rounded-md w-fit text-black font-medium"
           >
             <BellRing className="text-black size-5" />
             1 in 3 reps fail within 6 months.

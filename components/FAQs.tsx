@@ -8,18 +8,23 @@ const DEMO_FAQS = [
     category: "Getting Started",
   },
   {
-    question: "What payment methods do you accept?",
-    answer: "We accept all major credit cards, PayPal, and bank transfers. All payments are processed securely through our payment partners.",
+    question: "How is this different from a recruiter or ATS?",
+    answer: "Recruiters rely on gut feel. ATS systems just track applicants.Scooter brings structure, signal, and science — parsing resumes, assessing real traits, and delivering ranked shortlists so you spend time only on reps worth meeting.",
     category: "Billing",
   },
   {
-    question: "Is there a free trial available?",
-    answer: "Yes! We offer a 14-day free trial with full access to all features. No credit card required to start your trial.",
+    question: "What do you assess in candidates?",
+    answer: "",
+    category: "Pricing",
+  },
+    {
+    question: "Is this is sourcing tool?",
+    answer: "Not yet. Scooter starts at the top of the funnel — JD creation, application intake, and screening. Sourcing is on our roadmap.",
     category: "Pricing",
   },
   {
-    question: "How can I contact support?",
-    answer: "Our support team is available 24/7 through our help center, email support, or live chat. We typically respond within 2 hours.",
+    question: "What do candidates think?",
+    answer: " They love it. Candidates finally get to show how they sell — not just what they’ve sold.Even rejections come with clarity and respect.“This is the best hiring experience I’ve had.”",
     category: "Support",
   },
 ];

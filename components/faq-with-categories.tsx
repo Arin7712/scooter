@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ArrowRight } from "lucide-react";
 
 interface FaqSectionWithCategoriesProps
   extends React.HTMLAttributes<HTMLElement> {
@@ -79,9 +80,24 @@ const FaqSectionWithCategories = React.forwardRef<
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pt-4 pb-6">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {item.answer}
-                  </p>
+                  {index === 2 ? (
+                    <p className="text-muted-foreground leading-relaxed">
+                      We go beyond experience and logos. Scooter evaluates:
+                      <p className="flex flex-col gap-1 pt-2" typeof="bullet">
+                        <li>Sales motion</li>
+                        <li>ICP fit</li>
+                        <li>Tools Used</li>
+                        <li>
+                          Behavioral traits like grit, coachability,
+                          communication, and sales judgment
+                        </li>
+                      </p>
+                    </p>
+                  ) : (
+                    <p className="text-muted-foreground leading-relaxed">
+                      {item.answer}
+                    </p>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -96,8 +112,9 @@ const FaqSectionWithCategories = React.forwardRef<
                   {contactInfo.description}
                 </p>
               )}
-              <Button size="sm" onClick={contactInfo.onContact}>
-                {contactInfo.buttonText}
+              <Button className="bg-gradient-to-b flex items-center w-fit gap-2 from-zinc-600 to-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60">
+                Contact Support
+                <ArrowRight />
               </Button>
             </div>
           )}
