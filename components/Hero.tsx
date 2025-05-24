@@ -9,6 +9,7 @@ import { Button } from './ui/button'
 import Image from 'next/image'
 import { InfiniteSlider } from './ui/infinite-slider'
 import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 
 const font = Dancing_Script({ subsets: ['latin'], weight: ['400', '500', '600', '700'] })
 
@@ -81,9 +82,12 @@ const Hero = () => {
       transition={{ duration: 0.6, delay: 0.7 }}
       viewport={{ once: true }}
     >
-      <Button className='bg-gradient-to-b from-zinc-600 to-black px-6 rounded-full'>
-        Join the Waitlist
-      </Button>
+<Button
+  className="bg-gradient-to-b flex items-center gap-2 from-zinc-600 to-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60"
+>
+  Join the Waitlist
+  <ArrowRight/>
+</Button>
     </motion.div>
 
     <motion.p

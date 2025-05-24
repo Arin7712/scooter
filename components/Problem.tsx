@@ -1,13 +1,17 @@
 'use client'
 import React, { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { Dancing_Script } from 'next/font/google'
+
+const font = Dancing_Script({ subsets: ['latin'], weight: ['400', '500', '600', '700'] })
+
 
 const quotes = [
   "“We’re not getting signal on what’s working.”",
   "“I need someone who can actually execute, not just give advice.”",
   "“Content keeps getting deprioritized.”",
   "“Our pipeline is inconsistent.”",
-  "“We need more meetings.”",
+  "“We need more sales reps.”",
   "“I wish I had someone to turn my ideas into action.”"
 ]
 
@@ -54,9 +58,10 @@ const Problem = () => {
       onMouseLeave={handleMouseLeave}
       className="py-[6rem] relative flex items-center justify-center h-screen overflow-hidden bg-white"
     >
+      
       <h1 className="text-5xl text-center z-10 font-medium">
         Why Founders <br />
-        <span className="text-zinc-500">Partner With Us</span>
+        <span className={`text-zinc-500 ${font.className}`}>Partner With Us</span>
       </h1>
 
       <style>
