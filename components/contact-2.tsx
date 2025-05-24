@@ -85,7 +85,7 @@ export const Contact2 = ({
               </ul>
             </div> */}
           </div>
-          <div className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg border-[1px] p-10 z-50 bg-white shadow-2xl">
+          <div className="mx-auto flex md:max-w-screen-md flex-col gap-6 rounded-lg border-[1px] p-10 z-50 bg-white shadow-2xl">
             <div className="flex gap-4">
               <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="firstname">First Name</Label>
