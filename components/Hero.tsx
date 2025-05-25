@@ -46,7 +46,7 @@ const Hero = () => {
         )}
       />
 
-      <div className="flex flex-col pt-[4rem] items-center justify-center md:px-0 px-[8rem] pb-[6rem]">
+      <div className="flex flex-col pt-[4rem] items-center justify-center lg:px-0 px-[6rem] pb-[6rem]">
         <div className="flex flex-col md:max-w-5xl items-center justify-center gap-6 text-center z-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
-            className="text-neutral-700 text-md max-w-xl"
+            className="text-neutral-700 text-md md:px-0 px-6 md:max-w-xl"
           >
             Scooter uses <span className="text-blue-500 font-medium">AI + behavioral science</span> to help you hire better sales
             talent, faster.
