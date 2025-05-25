@@ -46,7 +46,7 @@ const Hero = () => {
         )}
       />
 
-      <div className="flex flex-col pt-[4rem] items-center justify-center md:px-0 px-[4rem] xs:px-[6rem] pb-[6rem]">
+      <div className="flex flex-col pt-[4rem] items-center justify-center md:px-0 px-[8rem] pb-[6rem]">
         <div className="flex flex-col md:max-w-5xl items-center justify-center gap-6 text-center z-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
