@@ -138,7 +138,7 @@ const Problem2 = () => {
           }}
           className="relative z-10 w-full md:w-1/2 space-y-12 md:block hidden"
         >
-          <Image src="/f1.png" alt="F1 Car" width={500} height={100} />
+          <Image src="/f3.png" alt="F1 Car" width={500} height={100} />
           
         </motion.div>
                 <motion.div
