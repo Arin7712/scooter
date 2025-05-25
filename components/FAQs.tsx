@@ -24,7 +24,7 @@ const DEMO_FAQS = [
   },
   {
     question: "What do candidates think?",
-    answer: " They love it. Candidates finally get to show how they sell — not just what they’ve sold.Even rejections come with clarity and respect.“This is the best hiring experience I’ve had.”",
+    answer: " They love it. Candidates finally get to show how they sell — not just what they’ve sold. Even rejections come with clarity and respect.“This is the best hiring experience I’ve had.”",
     category: "Support",
   },
 ];

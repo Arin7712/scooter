@@ -30,10 +30,10 @@ function Demo() {
           },
         ]}
         mainLinks={[
-          { href: "/products", label: "Products" },
+          { href: "/", label: "Home" },
+          { href: "/problem", label: "Problem" },
           { href: "/about", label: "About" },
-          { href: "/blog", label: "Blog" },
-          { href: "/contact", label: "Contact" },
+          { href: "/pricing", label: "Pricing" },
         ]}
         legalLinks={[
           { href: "/privacy", label: "Privacy" },

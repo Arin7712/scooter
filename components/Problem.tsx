@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Dancing_Script } from "next/font/google";
 
@@ -9,39 +9,65 @@ const font = Dancing_Script({
 });
 
 const quotes = [
-  "“We’re not getting signal on what’s working.”",
-  "“I need someone who can actually execute, not just give advice.”",
-  "“Content keeps getting deprioritized.”",
-  "“Our pipeline is inconsistent.”",
-  "“We need more sales reps.”",
-  "“I wish I had someone to turn my ideas into action.”",
+  "“Scooter helped us see beyond the resume — we finally hired someone who could actually sell.”",
+  "“I spent less time interviewing and still made a better hire. That’s magic.”",
+  "“The voice and video insights showed us things a CV never could.”",
+  "“The structured screening was a game-changer. We saved weeks and avoided a bad hire.”",
+  "“It’s like someone finally built a hiring tool that gets sales.”",
+  "“Scooter’s process surfaced grit, communication, sales motion— all before the first call.”",
+  "“We don’t have a recruiter — Scooter gave us structure we didn’t even know we needed.”",
+  "“In sales, I hire for energy and motivation. Scooter helped us find that early.”",
 ];
 
 const positions = [
   { top: "10%", left: "5%" },
   { top: "10%", right: "5%" },
-  { bottom: "20%", left: "10%" },
+  { bottom: "25%", left: "5%" },
   { bottom: "10%", right: "5%" },
-  { top: "60%", left: "50%", transform: "translateX(-50%)" },
-  { bottom: "60%", right: "30%" },
+  { top: "80%", left: "40%", transform: "translateX(-50%)" },
+  { bottom: "80%", right: "30%" },
+  { top: "30%", left: "20%" },
+  { bottom: "40%", right: "15%" },
+];
+
+const mobilePositions = [
+  { top: "5%", left: "5%" },
+  { top: "10%", right: "5%" },
+  { top: "30%", left: "40%" },
+  { top: "60%", right: "20%" },
+  { top: "55%", left: "5%" },
+  { top: "80%", right: "5%" },
+  { top: "80%", left: "5%" },
+  { top: "110%", right: "5%" },
 ];
 
 const rotations = [
   "rotate(-3deg)",
   "rotate(5deg)",
-  "rotate(2deg)",
+  "rotate(-10deg)",
   "rotate(-6deg)",
   "rotate(8deg)",
-  "rotate(3deg)",
+  "rotate(10deg)",
+  "rotate(-4deg)",
+  "rotate(6deg)",
 ];
 
 const Problem = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const [isMobile, setIsMobile] = useState(false);
 
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" }); // trigger when near viewport
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind md = 768px
+    };
+    handleResize(); // Run on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  const handleMouseMove = (e: any) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
@@ -61,30 +87,22 @@ const Problem = () => {
       className="py-[6rem] relative flex items-center justify-center h-screen overflow-hidden bg-white"
     >
       <h1 className="text-5xl text-center z-10 font-medium">
-        Why Founders <br />
-        <span className={`text-zinc-500 ${font.className}`}>
-          Partner With Us
-        </span>
+        Why teams <br />
+        <span className={`text-zinc-500 ${font.className}`}>Trust Scooter</span>
       </h1>
 
       <style>
         {`
           ${rotations
             .map(
-              (rotation, i) => `
-            @keyframes float${i} {
-              0%, 100% {
-                transform: ${
-                  positions[i].transform || ""
-                } ${rotation} translateY(0);
-              }
-              50% {
-                transform: ${
-                  positions[i].transform || ""
-                } ${rotation} translateY(-8px);
-              }
-            }
-          `
+              (rotation, i) => `@keyframes float${i} {
+                0%, 100% {
+                  transform: ${rotation} translateY(0);
+                }
+                50% {
+                  transform: ${rotation} translateY(-8px);
+                }
+              }`
             )
             .join("\n")}
         `}
@@ -93,23 +111,22 @@ const Problem = () => {
       {quotes.map((quote, i) => {
         const moveX = mousePos.x * 8 * (i % 2 === 0 ? 1 : -1);
         const moveY = mousePos.y * 5;
+        const positionStyle = isMobile ? mobilePositions[i] : positions[i];
+        const rotation = rotations[i];
 
         return (
           <motion.div
             key={i}
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: i * 0.3, duration: 0.8 }}
-            className="absolute p-3 sm:p-4 md:max-w-[20%] max-w-[40%] rounded-md bg-neutral-300 text-xs md:text-md font-medium text-zinc-800 z-0"
-            style={
-              {
-                ...positions[i],
-                animation: `float${i} 4s ease-in-out ${i * 0.3}s infinite`,
-                transform: `var(--animation-transform, none) translateX(var(--move-x)) translateY(var(--move-y))`,
-                "--move-x": `${moveX}px`,
-                "--move-y": `${moveY}px`,
-              } as any // 👈 This fixes the type error
-            }
+            transition={{ delay: i * 0.2, duration: 0.8 }}
+            className="absolute p-3 sm:p-4 rounded-md bg-neutral-300 text-xs font-medium text-zinc-800 z-0"
+            style={{
+              ...positionStyle,
+              animation: `float${i} 4s ease-in-out ${i * 0.2}s infinite`,
+              transform: `translateX(${moveX}px) translateY(${moveY}px) ${rotation}`,
+              maxWidth: isMobile ? "30%" : "20%",
+            }}
           >
             <p>{quote}</p>
           </motion.div>

@@ -45,7 +45,7 @@ export function Footer({
         <h1 className={`lg:text-5xl font-medium text-5xl`}>
           Ready to get started?
         </h1>
-        <p className="text-md text-zinc-300">Let's get your sales in - fast.</p>
+        <p className="text-md text-zinc-300">Let’s find your next great seller.</p>
         <Button className="bg-gradient-to-b flex items-center gap-2 from-neutral-100 to-zinc-400 text-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-neutral-300">
           Get started
           <ArrowRight />
@@ -114,28 +114,42 @@ export function Footer({
         </div>
       </div>
 <InfiniteSlider
-  gap={0}
+  gap={50}
   duration={50}
   className="flex flex-col items-center justify-center gap-6 text-center w-full opacity-50"
 >
   <Image
     src="/pop.png"
     alt="Pop"
-    width={600}
+    width={400}
     height={800}
     className="filter grayscale"
   />
   <Image
     src="/pop.png"
     alt="Pop"
-    width={600}
+    width={400}
     height={800}
     className="filter grayscale"
   />
   <Image
     src="/pop.png"
     alt="Pop"
-    width={800}
+    width={400}
+    height={800}
+    className="filter grayscale"
+  />
+    <Image
+    src="/pop.png"
+    alt="Pop"
+    width={400}
+    height={800}
+    className="filter grayscale"
+  />
+    <Image
+    src="/pop.png"
+    alt="Pop"
+    width={400}
     height={800}
     className="filter grayscale"
   />

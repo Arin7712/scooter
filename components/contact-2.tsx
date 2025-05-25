@@ -58,7 +58,7 @@ export const Contact2 = ({
               <h1 className="mb-4 text-5xl lg:mb-4 lg:text-6xl">
                 Let's talk
                 <br />
-                <span className={`text-zinc-500 ${font.className}`}>Sales hiring</span>
+                <span className={`text-blue-500 ${font.className}`}>Sales hiring</span>
               </h1>
               <p className="text-black mb-4">
                 Want to explore if Scooter is right for your team?

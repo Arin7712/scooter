@@ -88,8 +88,8 @@ export const StickyScroll = ({
           transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
           className="p-[0.1rem] bg-neutral-500 rounded-full w-fit"
         >
-          <div className="px-6 py-2 w-fit flex items-center gap-1 text-xs bg-neutral-300 border-zinc-300 uppercase tracking-tight font-medium rounded-full border-[1px]">
-            <Sparkles className="size-3" />
+          <div className="px-6 py-2 w-fit flex items-center gap-1 text-xs bg-neutral-200 border-zinc-300 uppercase tracking-tight font-medium rounded-full border-[1px]">
+            <Sparkles className="size-3 text-blue-400" />
             The Solution
           </div>
         </motion.div>
