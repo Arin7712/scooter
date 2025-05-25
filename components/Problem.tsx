@@ -33,9 +33,9 @@ const positions = [
 const mobilePositions = [
   { top: "5%", left: "5%" },
   { top: "10%", right: "5%" },
-  { top: "30%", left: "40%" },
-  { top: "60%", right: "20%" },
-  { top: "55%", left: "5%" },
+  { top: "30%", left: "60%" },
+  { top: "60%", right: "35%" },
+  { top: "30%", left: "5%" },
   { top: "80%", right: "5%" },
   { top: "80%", left: "5%" },
   { top: "110%", right: "5%" },
@@ -120,12 +120,12 @@ const Problem = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: i * 0.2, duration: 0.8 }}
-            className="absolute p-3 sm:p-4 rounded-md bg-neutral-300 text-xs font-medium text-zinc-800 z-0"
+            className="absolute p-3 sm:p-4 rounded-md bg-neutral-300 text-[10px] md:text-xs font-medium text-zinc-800 z-0"
             style={{
               ...positionStyle,
               animation: `float${i} 4s ease-in-out ${i * 0.2}s infinite`,
               transform: `translateX(${moveX}px) translateY(${moveY}px) ${rotation}`,
-              maxWidth: isMobile ? "30%" : "20%",
+              maxWidth: isMobile ? "32%" : "20%",
             }}
           >
             <p>{quote}</p>

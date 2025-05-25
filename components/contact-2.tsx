@@ -33,6 +33,31 @@ export const Contact2 = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+    const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event:any) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <section ref={ref} className="py-[6rem] md:px-0 px-6 relative bg-neutral-100">
       <DotPattern
@@ -72,7 +97,8 @@ export const Contact2 = ({
             </motion.div>
           </motion.div>
 
-          <motion.div
+          <motion.form
+          onSubmit={onSubmit}
             className="md:mx-auto flex md:max-w-screen-md flex-col gap-6 rounded-lg border-[1px] p-10 z-50 bg-white shadow-2xl"
             {...fadeIn(0.5, isInView)}
           >
@@ -103,12 +129,12 @@ export const Contact2 = ({
               />
             </motion.div>
             <motion.div {...fadeIn(1, isInView)}>
-              <Button className="bg-gradient-to-b flex items-center gap-2 from-zinc-600 to-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60">
+              <Button type="submit" className="bg-gradient-to-b flex items-center gap-2 from-zinc-600 to-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60">
                 Send Message
                 <ArrowRight />
               </Button>
             </motion.div>
-          </motion.div>
+          </motion.form>
         </div>
       </div>
     </section>

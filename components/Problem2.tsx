@@ -77,10 +77,9 @@ const Problem2 = () => {
             custom={0}
             className="md:text-4xl text-3xl md:max-w-[85%] font-medium"
           >
-            You built the <span className="text-neutral-200">F1 car</span>. But
-            you’re still{" "}
-            <span className="text-neutral-200">picking drivers</span> based on{" "}
-            <span className="text-neutral-200">resumes</span>.
+            You've built the <span className="text-neutral-200">car.</span> But
+            how do you pick the{" "}
+            <span className="text-neutral-200">right driver?</span>
           </motion.h1>
 
           <motion.p
