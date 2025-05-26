@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { ArrowRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-scroll";
 
 interface FaqSectionWithCategoriesProps
   extends React.HTMLAttributes<HTMLElement> {
@@ -128,10 +129,12 @@ const FaqSectionWithCategories = React.forwardRef<
                   {contactInfo.description}
                 </p>
               )}
-              <Button className="bg-gradient-to-b flex items-center w-fit gap-2 from-zinc-600 to-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60">
-                {contactInfo.buttonText}
-                <ArrowRight />
-              </Button>
+              <Link to="contact" smooth={true} duration={1000}>
+                <Button className="bg-gradient-to-b flex items-center w-fit gap-2 from-zinc-600 to-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60">
+                  {contactInfo.buttonText}
+                  <ArrowRight />
+                </Button>
+              </Link>
             </motion.div>
           )}
         </div>

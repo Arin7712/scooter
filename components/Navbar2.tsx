@@ -5,29 +5,27 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import {Link} from "react-scroll";
-import { default as Link2 } from "next/link";
-
+import Link from "next/link";
 const navItems = [
   {
     name: 'Home',
-    href: 'home'
+    href: '/'
   },
   {
     name: 'Problem',
-    href: 'problem'
+    href: '/problem'
   },
   {
     name: 'About',
-    href: 'about'
+    href: '/about'
   },
   {
     name: 'Pricing',
-    href: 'contact'
+    href: '/contact'
   }
 ]
 
-const Navbar1 = () => {
+const Navbar2 = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -51,7 +49,7 @@ const Navbar1 = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
           {navItems.map((item, index) => (
-            <Link to={item.href} smooth={true} duration={1000} key={index}>
+            <Link href={item.href} key={index}>
 
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -70,7 +68,7 @@ const Navbar1 = () => {
         </nav>
 
         {/* Desktop CTA Button */}
-                      <Link2 href='/contact'>
+                      <Link href="/contact">
 
         <motion.div
           className="hidden lg:block"
@@ -85,7 +83,7 @@ const Navbar1 = () => {
             Get Started
           </div>
         </motion.div>
-        </Link2>
+        </Link>
 
         {/* Mobile Menu Button */}
         <motion.button
@@ -124,7 +122,7 @@ const Navbar1 = () => {
             </motion.button>
             <div className="flex flex-col space-y-6 pt-[4rem]">
                         {navItems.map((item, index) => (
-                          <Link to="contact" smooth={true} duration={1000} key={index}>
+                          <Link key={index}>
 
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -165,4 +163,4 @@ const Navbar1 = () => {
   );
 };
 
-export { Navbar1 };
+export { Navbar2 };

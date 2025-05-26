@@ -52,7 +52,7 @@ const Problem2 = () => {
       `}</style>
 
 
-      <div className="relative py-[6rem] md:gap-0 gap-[4rem] flex md:flex-row flex-col items-center justify-between md:h-screen overflow-hidden bg-black px-6 md:px-[6rem]">
+      <div className="relative py-[6rem] md:gap-0 gap-[4rem] flex lg:flex-row flex-col items-center justify-between md:h-screen overflow-hidden bg-black px-6 md:px-[6rem]">
         <DotPattern
           cy={1}
           cr={1}
@@ -65,7 +65,7 @@ const Problem2 = () => {
         {/* Text on left with sequential fade-in */}
         <motion.div
           ref={sectionRef}
-          className="md:w-1/2 flex flex-col gap-6 md:gap-[1rem] text-neutral-500"
+          className="lg:w-1/2 flex flex-col gap-6 md:gap-[1rem] text-neutral-500"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{
@@ -75,7 +75,7 @@ const Problem2 = () => {
           <motion.h1
             variants={fadeInVariant}
             custom={0}
-            className="md:text-4xl text-3xl md:max-w-[85%] font-medium"
+            className="md:text-4xl text-3xl lg:max-w-[85%] font-medium"
           >
             You've built the <span className="text-neutral-200">car.</span> But
             how do you pick the{" "}

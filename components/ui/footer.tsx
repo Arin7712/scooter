@@ -3,6 +3,27 @@ import { ArrowRight } from "lucide-react";
 import { Dancing_Script } from "next/font/google";
 import Image from "next/image";
 import { InfiniteSlider } from "./infinite-slider";
+import { Link } from "react-scroll";
+import {motion} from "framer-motion";
+
+const navItems = [
+  {
+    name: 'Home',
+    href: 'home'
+  },
+  {
+    name: 'Problem',
+    href: 'problem'
+  },
+  {
+    name: 'About',
+    href: 'about'
+  },
+  {
+    name: 'Pricing',
+    href: 'contact'
+  }
+]
 
 interface FooterProps {
   logo: React.ReactNode;
@@ -80,17 +101,24 @@ export function Footer({
         </div>
         <div className="border-t mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
           <nav className="lg:mt-0 lg:col-[4/11]">
-            <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
-              {mainLinks.map((link, i) => (
-                <li key={i} className="my-1 mx-2 shrink-0 text-neutral-300">
-                  <a
-                    href={link.href}
-                    className="text-sm underline-offset-4 hover:underline"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+            <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end gap-3">
+                        {navItems.map((item, index) => (
+                          <Link to="contact" smooth={true} duration={1000} key={index}>
+
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div
+                className="text-sm hover:cursor-pointer text-neutral-300 hover:text-white  transition-all duration-200 "
+              >
+                {item.name}
+              </div>
+            </motion.div>
+            </Link>
+          ))}
             </ul>
           </nav>
           <div className="mt-6 lg:mt-0 lg:col-[4/11]">
