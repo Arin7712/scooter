@@ -122,7 +122,7 @@ const Navbar2 = () => {
             </motion.button>
             <div className="flex flex-col space-y-6 pt-[4rem]">
                         {navItems.map((item, index) => (
-                          <Link key={index}>
+                          <Link href={item.href} key={index}>
 
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -139,7 +139,7 @@ const Navbar2 = () => {
             </Link>
           ))}
 
-              <Link to="contact" smooth={true} duration={1000}>
+              <Link href="/">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
