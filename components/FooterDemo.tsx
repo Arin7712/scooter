@@ -20,7 +20,7 @@ function Demo() {
           },
                     {
             icon:     <FontAwesomeIcon icon={faLinkedin} className="text-neutral-300" />,
-            href: "https://github.com",
+            href: "https://www.linkedin.com/company/scooter-ai/",
             label: "GitHub",
           },
           {
