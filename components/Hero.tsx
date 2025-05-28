@@ -161,10 +161,9 @@ const Hero = () => {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Are you absolutely sure?</DialogTitle>
+                  <DialogTitle>Join the Waitlist</DialogTitle>
                   <DialogDescription>
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
+                    Sign up to stay in the loop and be among the first to explore our launch. Early supporters always get the best!
                   </DialogDescription>
                 </DialogHeader>
                 <div>
