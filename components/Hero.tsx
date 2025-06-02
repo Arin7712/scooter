@@ -42,6 +42,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import { AnimatedListDemo } from "./AnimatedListDemo";
 
 const font = Dancing_Script({
   subsets: ["latin"],
@@ -53,13 +54,13 @@ const Hero = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = React.useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [hire, setHire] = useState('Looking to get hired');
+  const [hire, setHire] = useState("Looking to get hired");
 
   const onSubmit = async (event: any) => {
     event.preventDefault();
     setLoading(true);
     const formData = new FormData(event.target);
-    formData.append(hire, "351e1131-0e51-4df4-9857-e7f1c826fecf")
+    formData.append(hire, "351e1131-0e51-4df4-9857-e7f1c826fecf");
     formData.append("access_key", "351e1131-0e51-4df4-9857-e7f1c826fecf");
 
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -77,7 +78,7 @@ const Hero = () => {
       setResult("Form Submitted Successfully");
       setLoading(false);
       event.target.reset();
-        setIsDialogOpen(false); // Close dialog here ✅
+      setIsDialogOpen(false); // Close dialog here ✅
     } else {
       console.log("Error", data);
       setResult(data.message);
@@ -93,6 +94,9 @@ const Hero = () => {
         width={1000}
         height={1000}
       />
+      {/* <div className="absolute top-[30%] right-[35%] z-10 flex justify-start px-6 w-full h-[40%]">
+        <AnimatedListDemo />
+      </div> */}
 
       <Navbar1 />
 
@@ -151,9 +155,10 @@ const Hero = () => {
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
                 <div>
-                  <Button 
-                  onClick={() => setIsDialogOpen(true)}
-                  className="bg-gradient-to-b flex items-center gap-2 from-zinc-600 to-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60">
+                  <Button
+                    onClick={() => setIsDialogOpen(true)}
+                    className="bg-gradient-to-b flex items-center gap-2 from-zinc-600 to-black px-6 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60"
+                  >
                     Join the Waitlist
                     <ArrowRight />
                   </Button>
@@ -163,7 +168,8 @@ const Hero = () => {
                 <DialogHeader>
                   <DialogTitle>Join the Waitlist</DialogTitle>
                   <DialogDescription>
-                    Sign up to stay in the loop and be among the first to explore our launch. Early supporters always get the best!
+                    Sign up to stay in the loop and be among the first to
+                    explore our launch. Early supporters always get the best!
                   </DialogDescription>
                 </DialogHeader>
                 <div>
@@ -186,26 +192,38 @@ const Hero = () => {
                         <Input
                           type="text"
                           id="lastname"
-                          name='lastname'
+                          name="lastname"
                           placeholder="Last Name"
                         />
                       </div>
                     </motion.div>
                     <motion.div className="grid w-full items-center gap-1.5">
                       <Label htmlFor="email">Email</Label>
-                      <Input type="email" name="email" id="email" placeholder="Email" />
+                      <Input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                      />
                     </motion.div>
                     <motion.div className="grid w-full items-center gap-1.5">
                       <motion.div className="grid w-full items-center gap-1.5">
                         <Label htmlFor="subject">Objective</Label>
-                        <Select name="subject" required   onValueChange={(value) => setHire(value)}
->
+                        <Select
+                          name="subject"
+                          required
+                          onValueChange={(value) => setHire(value)}
+                        >
                           <SelectTrigger id="subject" className="w-full">
                             <SelectValue placeholder="Select a subject" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="Hiring for sales">Hiring for sales</SelectItem>
-                            <SelectItem value="Looking to get hired">Looking to get hired</SelectItem>
+                            <SelectItem value="Hiring for sales">
+                              Hiring for sales
+                            </SelectItem>
+                            <SelectItem value="Looking to get hired">
+                              Looking to get hired
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                       </motion.div>

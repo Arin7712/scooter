@@ -41,7 +41,7 @@ const positions = [
 const mobilePositions = [
   { top: "5%", left: "2%" },
   { top: "65%", left: "20%" },
-  { top: "20%", right: "5%" },
+  { top: "25%", right: "5%" },
 ];
 
 const rotations = [
@@ -82,7 +82,7 @@ const Problem = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="py-[6rem] relative flex items-center justify-center h-[120vh] md:h-screen overflow-hidden bg-white"
+      className="py-[6rem] relative flex items-center justify-center h-[110vh] md:h-screen overflow-hidden bg-white"
     >
       <h1 className="text-5xl text-center z-10 font-medium">
         Why teams <br />
@@ -123,7 +123,7 @@ const Problem = () => {
               ...positionStyle,
               animation: `float${i} 4s ease-in-out ${i * 0.2}s infinite`,
               transform: `translateX(${moveX}px) translateY(${moveY}px) ${rotation}`,
-              maxWidth: isMobile ? "45%" : "20%",
+              maxWidth: isMobile ? "60%" : "20%",
             }}
           >
             <div>
