@@ -41,13 +41,13 @@ const positions = [
 const mobilePositions = [
   { top: "5%", left: "2%" },
   { top: "65%", left: "20%" },
-  { top: "25%", right: "5%" },
+  { top: "28%", right: "5%" },
 ];
 
 const rotations = [
   "rotate(-3deg)",
   "rotate(5deg)",
-  "rotate(10deg)",
+  "rotate(8deg)",
 ];
 
 const Problem = () => {
@@ -129,7 +129,7 @@ const Problem = () => {
             <div>
               <h1 className="text-lg">{quote.name}</h1>
               <p className="italic text-neutral-500 text-md">{quote.title}, {quote.company}</p>
-              <p className="pt-6 text-neutral-600">{quote.quote}</p>
+              <p className="pt-6 text-neutral-600 font-normal text-xs">{quote.quote}</p>
             </div>
           </motion.div>
         );
