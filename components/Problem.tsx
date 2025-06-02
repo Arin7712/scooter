@@ -2,6 +2,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Dancing_Script } from "next/font/google";
+import { cn } from "@/lib/utils";
+import { GridPattern } from "./magicui/grid-pattern";
 
 const font = Dancing_Script({
   subsets: ["latin"],
@@ -84,6 +86,26 @@ const Problem = () => {
       onMouseLeave={handleMouseLeave}
       className="py-[6rem] relative flex items-center justify-center h-[140vh] md:h-screen overflow-hidden bg-white"
     >
+            <GridPattern
+        squares={[
+          [4, 4],
+          [5, 1],
+          [8, 2],
+          [5, 3],
+          [5, 5],
+          [10, 10],
+          [12, 15],
+          [15, 10],
+          [10, 15],
+          [15, 10],
+          [10, 15],
+          [15, 10],
+        ]}
+        className={cn(
+          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+        )}
+      />
       <h1 className="text-5xl text-center z-10 font-medium">
         Why teams <br />
         <span className={`text-zinc-500 ${font.className}`}>Trust Scooter</span>
