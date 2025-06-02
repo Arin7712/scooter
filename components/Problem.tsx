@@ -8,48 +8,46 @@ const font = Dancing_Script({
   weight: ["400", "500", "600", "700"],
 });
 
-const quotes = [
-  "“Scooter helped us see beyond the resume — we finally hired someone who could actually sell.”",
-  "“I spent less time interviewing and still made a better hire. That’s magic.”",
-  "“The voice and video insights showed us things a CV never could.”",
-  "“The structured screening was a game-changer. We saved weeks and avoided a bad hire.”",
-  "“It’s like someone finally built a hiring tool that gets sales.”",
-  "“Scooter’s process surfaced grit, communication, sales motion— all before the first call.”",
-  "“We don’t have a recruiter — Scooter gave us structure we didn’t even know we needed.”",
-  "“In sales, I hire for energy and motivation. Scooter helped us find that early.”",
+const testimonials = [
+  {
+    name: "Pawanjeet Singh",
+    title: "VP Sales",
+    company: "DemandFarm",
+    quote:
+      '"What stood out for me was being able to watch the candidate’s video and see real deal history before the first call. It gave me a clear sense of how they actually sell. I didn’t have to waste time on interviews that go nowhere."',
+  },
+    {
+    name: "Gopala Naidu",
+    title: "Founder",
+    company: "Marconi Technologies",
+    quote:
+      '"We don’t have an HR or TA team, so we handed the entire process over to Scooter. They took our JD, ran the whole thing, and gave us a shortlist of people who were actually a great fit. It was like having a plug-and-play hiring team."',
+  },
+      {
+    name: "Naqisa Silva",
+    title: "CEO",
+    company: "Discover Resorts",
+    quote:
+      '"We made a hire in under a week. No resume scanning, no job posting fatigue. Just saw how someone spoke and sold, and knew right away if they’d work for our team and customers. It made the decision easy."',
+  },
 ];
 
 const positions = [
-  { top: "10%", left: "5%" },
-  { top: "10%", right: "5%" },
-  { bottom: "25%", left: "5%" },
-  { bottom: "10%", right: "5%" },
-  { top: "80%", left: "40%", transform: "translateX(-50%)" },
-  { bottom: "80%", right: "30%" },
-  { top: "30%", left: "20%" },
-  { bottom: "40%", right: "15%" },
+  { top: "15%", left: "10%" },
+  { bottom: "50%", right: "5%" },
+  { top: "70%", left: "40%", transform: "translateX(-50%)" },
 ];
 
 const mobilePositions = [
-  { top: "5%", left: "5%" },
-  { top: "10%", right: "5%" },
-  { top: "30%", left: "60%" },
-  { top: "60%", right: "35%" },
-  { top: "30%", left: "5%" },
-  { top: "80%", right: "5%" },
-  { top: "80%", left: "5%" },
-  { top: "110%", right: "5%" },
+  { top: "5%", left: "2%" },
+  { top: "65%", left: "20%" },
+  { top: "20%", right: "5%" },
 ];
 
 const rotations = [
   "rotate(-3deg)",
   "rotate(5deg)",
-  "rotate(-10deg)",
-  "rotate(-6deg)",
-  "rotate(8deg)",
   "rotate(10deg)",
-  "rotate(-4deg)",
-  "rotate(6deg)",
 ];
 
 const Problem = () => {
@@ -84,7 +82,7 @@ const Problem = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="py-[6rem] relative flex items-center justify-center h-screen overflow-hidden bg-white"
+      className="py-[6rem] relative flex items-center justify-center h-[120vh] md:h-screen overflow-hidden bg-white"
     >
       <h1 className="text-5xl text-center z-10 font-medium">
         Why teams <br />
@@ -108,7 +106,7 @@ const Problem = () => {
         `}
       </style>
 
-      {quotes.map((quote, i) => {
+      {testimonials.map((quote, i) => {
         const moveX = mousePos.x * 8 * (i % 2 === 0 ? 1 : -1);
         const moveY = mousePos.y * 5;
         const positionStyle = isMobile ? mobilePositions[i] : positions[i];
@@ -120,15 +118,19 @@ const Problem = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: i * 0.2, duration: 0.8 }}
-            className="absolute p-3 sm:p-4 rounded-md bg-neutral-300 text-[10px] md:text-xs font-medium text-zinc-800 z-0"
+            className="absolute p-3 sm:p-4 rounded-md bg-neutral-200 text-[10px] md:text-xs font-medium text-zinc-800 z-0"
             style={{
               ...positionStyle,
               animation: `float${i} 4s ease-in-out ${i * 0.2}s infinite`,
               transform: `translateX(${moveX}px) translateY(${moveY}px) ${rotation}`,
-              maxWidth: isMobile ? "32%" : "20%",
+              maxWidth: isMobile ? "45%" : "20%",
             }}
           >
-            <p>{quote}</p>
+            <div>
+              <h1 className="text-lg">{quote.name}</h1>
+              <p className="italic text-neutral-500 text-md">{quote.title}, {quote.company}</p>
+              <p className="pt-6 text-neutral-600">{quote.quote}</p>
+            </div>
           </motion.div>
         );
       })}
