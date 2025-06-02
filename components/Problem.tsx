@@ -118,7 +118,7 @@ const Problem = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: i * 0.2, duration: 0.8 }}
-            className="absolute p-3 sm:p-4 rounded-md bg-neutral-200 text-[10px] md:text-xs font-medium text-zinc-800 z-0"
+            className="absolute p-3 sm:p-4 rounded-md bg-neutral-200 text-[10px] font-medium text-zinc-800 z-0"
             style={{
               ...positionStyle,
               animation: `float${i} 4s ease-in-out ${i * 0.2}s infinite`,
@@ -127,8 +127,8 @@ const Problem = () => {
             }}
           >
             <div>
-              <h1 className="text-lg">{quote.name}</h1>
-              <p className="italic text-neutral-500 text-md">{quote.title}, {quote.company}</p>
+              <h1 className="md:text-lg text-md">{quote.name}</h1>
+              <p className="italic text-neutral-500 md:text-md text-sm">{quote.title}, {quote.company}</p>
               <p className="pt-6 text-neutral-600 font-normal text-xs">{quote.quote}</p>
             </div>
           </motion.div>
