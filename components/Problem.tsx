@@ -123,7 +123,7 @@ const Problem = () => {
               ...positionStyle,
               animation: `float${i} 4s ease-in-out ${i * 0.2}s infinite`,
               transform: `translateX(${moveX}px) translateY(${moveY}px) ${rotation}`,
-              maxWidth: isMobile ? "60%" : "20%",
+              maxWidth: isMobile ? "70%" : "20%",
             }}
           >
             <div>
