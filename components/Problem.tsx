@@ -82,7 +82,7 @@ const Problem = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="py-[6rem] relative flex items-center justify-center h-[110vh] md:h-screen overflow-hidden bg-white"
+      className="py-[6rem] relative flex items-center justify-center h-[120vh] md:h-screen overflow-hidden bg-white"
     >
       <h1 className="text-5xl text-center z-10 font-medium">
         Why teams <br />
@@ -127,7 +127,7 @@ const Problem = () => {
             }}
           >
             <div>
-              <h1 className="md:text-lg text-md">{quote.name}</h1>
+              <h1 className="text-lg">{quote.name}</h1>
               <p className="italic text-neutral-500 md:text-md text-sm">{quote.title}, {quote.company}</p>
               <p className="pt-6 text-neutral-600 font-normal text-xs">{quote.quote}</p>
             </div>
