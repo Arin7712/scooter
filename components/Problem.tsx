@@ -82,7 +82,7 @@ const Problem = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="py-[6rem] relative flex items-center justify-center h-[120vh] md:h-screen overflow-hidden bg-white"
+      className="py-[6rem] relative flex items-center justify-center h-[140vh] md:h-screen overflow-hidden bg-white"
     >
       <h1 className="text-5xl text-center z-10 font-medium">
         Why teams <br />
