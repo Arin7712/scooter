@@ -9,6 +9,7 @@ import { StickyScrollRevealDemo } from '@/components/StickyScrollRevealDemo'
 import { Element } from 'react-scroll';
 import React from 'react'
 import CalendlyEmbed from '@/components/CalendlyEmbed'
+import Comparision from '@/components/Comparision'
 
 const page = () => {
   return (
@@ -16,6 +17,7 @@ const page = () => {
       <Element name="home">
       <Hero/>
       </Element>
+      <Comparision/>
       <Problem/>
       <Element name="problem">
       <Problem2/>
