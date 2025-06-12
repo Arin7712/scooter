@@ -7,6 +7,8 @@ import {
 import React from "react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { AnimatedGridPattern } from "./magicui/animated-grid-pattern";
 
 const withoutScooter = [
   "Write a job description from scratch",
@@ -33,70 +35,73 @@ const withScooter = [
 
 const Comparision = () => {
   return (
-    <div className="relative py-[6rem] gap-[6rem] flex lg:flex-row flex-col items-center justify-center overflow-hidden px-6 md:px-[10rem]">
-      
-      {/* Card 1 with animation */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="bg-neutral-100 border-[1px] rounded-md p-6 space-y-8 flex flex-col items-center md:scale-[0.9]"
-      >
-        <h1 className="text-2xl underline underline-offset-2">
-          Without Scooter
-        </h1>
-        <div className="flex flex-col gap-4">
-          {withoutScooter.map((item, i) => (
-            <div
-              className="flex items-center gap-2 text-sm text-neutral-400"
-              key={i}
-            >
-              <X className="text-red-500 size-5" />
-              <p>{item}</p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Card 2 with delayed animation */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="bg-neutral-100 shadow-md border-[1px] rounded-md p-6 py-10 w-fit md:max-w-2xl text-neutral-900 flex flex-col justify-start"
-      >
-        <div className="space-y-4">
-          <div className="flex items-center gap-4">
-            <CircleCheckBig className="text-green-500" />
-            <h1 className="text-2xl font-medium underline">With Scooter</h1>
+    <div className="relative py-[6rem] px-6 lg:px-[10rem] overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        {/* With Scooter */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-white shadow-sm border rounded-xl p-8 flex flex-col justify-between min-h-full relative"
+        >
+                <AnimatedGridPattern
+        numSquares={20}
+        maxOpacity={0.1}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "absolute inset-0 w-full h-full opacity-30",
+          "[mask-image:linear-gradient(to_bottom,white_52%,transparent)]",
+          "mask-size-100 mask-repeat-no-repeat",
+          "pointer-events-none"
+        )}
+      />
+          <div className="flex items-center gap-3 mb-4">
+            <CircleCheckBig className="text-green-500 size-6" />
+            <h2 className="text-2xl font-medium text-neutral-800">With Scooter</h2>
           </div>
-        </div>
 
-        <div className="md:px-4 md:pt-0 pt-4 flex flex-col gap-4">
-          <div className="space-y-4 text-sm md:text-md pt-6">
+          <div className="space-y-4 text-neutral-700 text-sm pt-2">
             {withScooter.map((text, i) => (
-              <div key={i} className="flex items-center gap-2 text-neutral-600">
-                <div>
-                <Check className="text-green-500 size-5 " />
+              <div key={i} className="flex items-start gap-3">
+                <div className="bg-green-100 p-1 rounded-full">
+                  <Check className="text-green-600 size-4" />
                 </div>
-                {text}
+                <span>{text}</span>
               </div>
             ))}
           </div>
-        </div>
 
-        <div
-              
-            >
-              <div className="flex flex-col gap-2 justify-between w-full pt-6">
-                  <Button  className="bg-gradient-to-b flex items-center gap-2 from-zinc-600 to-black px-6 text-sm py-1 rounded-full shadow-md transition-all duration-400 hover:shadow-inner hover:shadow-zinc-800/60">
-                  Yes, I want it <ArrowRight className="size-5" />
-                </Button>
+          <div className="pt-8">
+            <Button className="bg-gradient-to-b from-zinc-700 to-black text-white px-6 py-2 rounded-full shadow-md hover:shadow-inner hover:shadow-zinc-800/60 transition-all text-sm flex items-center gap-2">
+              Yes, I want it <ArrowRight className="size-5" />
+            </Button>
+          </div>
+        </motion.div>
+
+        {/* Without Scooter */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-neutral-100 border rounded-xl p-8 flex flex-col min-h-full"
+        >
+          <h2 className="text-2xl font-medium text-neutral-800 mb-6">Without Scooter</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-neutral-500 text-sm">
+            {withoutScooter.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="bg-red-100 p-1 rounded-full">
+                  <X className="text-red-500 size-4" />
+                </div>
+                <span>{item}</span>
               </div>
-            </div>
-      </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };

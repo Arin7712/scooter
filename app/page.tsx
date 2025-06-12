@@ -39,3 +39,26 @@ const page = () => {
 }
 
 export default page
+
+
+
+{/* 
+            <div className="flex items-start">
+            <div className="md:max-w-full w-full">
+              {withScooter.map((item, index) => (
+                <div
+                  key={item.title + index}
+                  className="border-b-[1px] border-neutral-600 pb-6 pt-6"
+                >
+                  <div>{item.icon}</div>
+                  <motion.h2 className="text-md font-medium text-black mt-3">
+                    {item.title}
+                  </motion.h2>
+                  <motion.p className="text-sm text-zinc-500 max-w-sm mt-1">
+                    {item.description}
+                  </motion.p>
+                </div>
+              ))}
+            </div>
+          </div>
+  */}

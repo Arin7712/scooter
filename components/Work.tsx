@@ -77,47 +77,46 @@ const Steps = () => {
 
         {/* Step Cards */}
         <div className="absolute w-[50%] top-[18%] md:top-[25%] left-[22%] md:left-[25%] -translate-x-1/2 -translate-y-1/2 px-4 py-2 text-sm flex flex-col gap-1">
-          <PhoneCall className="bg-neutral-800 rounded-md p-3 size-10 md:size-12 mb-4 text-blue-500" />
+          <PhoneCall className="bg-neutral-100 border-[1px] border-neutral-300 rounded-md p-3 size-10 md:size-12 mb-4 text-blue-500" />
           <h1 className="md:text-xl font-semibold text-md tracking-tight leading-tight">
             1. Share you wishlist
           </h1>
           <p className="md:text-sm text-xs text-neutral-400 max-w-xs">
             {" "}
-We create and distribute a sharp, high-signal JD to attract the right candidates.
+            We create and distribute a sharp, high-signal JD to attract the
+            right candidates.
           </p>
         </div>
         <div className="absolute w-[50%] top-[22%] md:top-[25%] right-[25%] md:right-[20%] translate-x-1/2 -translate-y-1/2  px-4 py-2  text-sm flex flex-col  gap-1">
-          <TvMinimalPlay className="bg-neutral-800 rounded-md p-3 size-10 md:size-12 mb-4 text-blue-500 " />
+          <TvMinimalPlay className="bg-neutral-100 border-[1px] border-neutral-300 rounded-md p-3 size-10 md:size-12 mb-4 text-blue-500" />
           <h1 className="md:text-xl font-semibold text-md tracking-tight leading-tight">
             2. Candidates Apply
           </h1>
           <p className="md:text-sm text-xs text-neutral-400 max-w-xs">
             {" "}
-            We collect resumes and validate each with voice-based CV inputs for authenticity.
-
+            We collect resumes and validate each with voice-based CV inputs for
+            authenticity.
           </p>{" "}
         </div>
         <div className="absolute w-[50%] bottom-[20%] md:bottom-[25%] left-[22%] md:left-[25%] -translate-x-1/2 translate-y-1/2 pl-4  md:px-4 py-2 text-sm flex flex-col  gap-1">
-          <FileUser className="bg-neutral-800 rounded-md p-3 size-10 md:size-12 mb-4 text-blue-500" />
+          <FileUser className="bg-neutral-100 border-[1px] border-neutral-300 rounded-md p-3 size-10 md:size-12 mb-4 text-blue-500" />
           <h1 className="md:text-xl font-semibold text-md tracking-tight leading-tight">
             3. We enrich profiles in motion
           </h1>
           <p className="md:text-sm text-xs text-neutral-400 max-w-xs">
             {" "}
-We auto-enrich every profile with insights: tools used, ICP, deal size, territory, tenure — all in motion.
-
-
+            We auto-enrich every profile with insights: tools used, ICP, deal
+            size, territory, tenure — all in motion.
           </p>{" "}
         </div>
         <div className="absolute w-[50%] bottom-[20%] md:bottom-[25%] right-[25%] md:right-[20%] translate-x-1/2 translate-y-1/2 pl-4 md:px-4 py-2 flex flex-col  gap-1 text-sm">
-          <LaptopMinimalCheck className="bg-neutral-800 rounded-md p-3 size-10 md:size-12 mb-4 text-blue-500" />
+          <LaptopMinimalCheck className="bg-neutral-100 border-[1px] border-neutral-300 rounded-md p-3 size-10 md:size-12 mb-4 text-blue-500" />
           <h1 className="md:text-xl font-semibold text-md tracking-tight leading-tight">
             4. You get a ranked shortlist
           </h1>
           <p className="md:text-sm text-xs text-neutral-400 max-w-xs">
             {" "}
             Structured profiles, scored assessments, and video clips
-
           </p>{" "}
         </div>
       </div>
