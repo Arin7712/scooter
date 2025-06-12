@@ -84,7 +84,7 @@ const Problem = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="py-[6rem] relative flex items-center justify-center h-[140vh] md:h-screen overflow-hidden bg-white"
+      className="py-[6rem] relative flex items-center justify-center h-[140vh] md:h-[120vh] overflow-hidden bg-white"
     >
             <GridPattern
         squares={[

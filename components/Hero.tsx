@@ -90,7 +90,7 @@ const Hero = () => {
       <Image
         src="/herobg.png"
         alt="Background"
-        className="absolute inset-0 w-full h-full object-cover object-left-top z-0 opacity-30"
+        className="absolute inset-0 w-full h-full object-cover object-left-top z-0 opacity-10"
         width={1000}
         height={1000}
       />

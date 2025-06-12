@@ -10,6 +10,7 @@ import { Element } from 'react-scroll';
 import React from 'react'
 import CalendlyEmbed from '@/components/CalendlyEmbed'
 import Comparision from '@/components/Comparision'
+import Work from '@/components/Work'
 
 const page = () => {
   return (
@@ -24,7 +25,8 @@ const page = () => {
       </Element>
       {/* <Solution/> */}
       <Element name="about">
-      <StickyScrollRevealDemo/>
+      {/* <StickyScrollRevealDemo/> */}
+      <Work/>
       </Element>
       <FaqSectionWithCategoriesDemo/>
       <Element name="contact">

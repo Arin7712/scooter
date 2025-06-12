@@ -33,7 +33,7 @@ const withScooter = [
 
 const Comparision = () => {
   return (
-    <div className="relative py-[6rem] gap-[6rem] flex lg:flex-row flex-col items-center justify-center md:h-screen overflow-hidden px-6 md:px-[10rem]">
+    <div className="relative py-[6rem] gap-[6rem] flex lg:flex-row flex-col items-center justify-center overflow-hidden px-6 md:px-[10rem]">
       
       {/* Card 1 with animation */}
       <motion.div
