@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://yoursite.com/scooter-logo.jpg", // ✅ replace with your hosted image URL
-        width: 1200,
-        height: 630,
+        width: 500,
+        height: 500,
         alt: "Scooter preview",
       },
     ],
