@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: "Scooter",
     images: [
       {
-        url: "https://yoursite.com/scooter-logo.jpg", // ✅ replace with your hosted image URL
+        url: "https://thescooter.ai/scooter-logo.jpg", // ✅ replace with your hosted image URL
         width: 500,
         height: 500,
         alt: "Scooter preview",
