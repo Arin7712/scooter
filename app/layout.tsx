@@ -2,13 +2,27 @@ import type { Metadata } from "next";
 import {  Poppins } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
-import { Navbar1 } from "@/components/ui/navbar-1";
 
 const font = Poppins({ weight: ["100", "200", "300" ,"400", "500", "600", "700", "800", "900"], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Scooter - Sales hiring, solved",
   description: "Scooter is a sales hiring engine that uses AI and behavioral science to help you find the right driver for your GTM race.",
+  openGraph: {
+    title: "Scooter - Sales hiring, solved",
+    description: "Scooter is a sales hiring engine that uses AI and behavioral science to help you find the right driver for your GTM race.",
+    url: "https://thescooter.ai", // replace with your domain
+    siteName: "Scooter",
+    images: [
+      {
+        url: "https://yoursite.com/scooter-logo.jpg", // ✅ replace with your hosted image URL
+        width: 1200,
+        height: 630,
+        alt: "Scooter preview",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
